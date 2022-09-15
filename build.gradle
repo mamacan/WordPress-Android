@@ -41,6 +41,7 @@ ext {
     exoPlayerVersion = '2.13.3'
 
     composeVersion = '1.1.1'
+    coilVersion = '2.1.0'
 
     // testing
     jUnitVersion = '4.13'
