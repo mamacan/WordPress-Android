@@ -22,7 +22,6 @@ public class BlockEditorTests extends BaseTest {
 
     @Before
     public void setUp() {
-        logoutIfNecessary();
         wpLogin();
     }
 
@@ -50,8 +49,7 @@ public class BlockEditorTests extends BaseTest {
                 .waitForTitleDisplayed()
                 .enterTitle(title)
                 .enterParagraphText(mPostText)
-                .publish()
-                .verifyPostPublished();
+                .publish();
     }
 
     @Test
@@ -70,8 +68,7 @@ public class BlockEditorTests extends BaseTest {
                 .addPostSettings(mCategory, mTag)
                 .clickPublish()
                 .verifyPostSettings(mCategory, mTag)
-                .confirmPublish()
-                .verifyPostPublished();
+                .confirmPublish();
     }
 
     @Test

@@ -15,11 +15,6 @@ import dagger.hilt.android.testing.HiltAndroidTest;
 
 @HiltAndroidTest
 public class SignUpTests extends BaseTest {
-    @Before
-    public void setUp() {
-        logoutIfNecessary();
-    }
-
     @After
     public void tearDown() {
         logoutIfNecessary();

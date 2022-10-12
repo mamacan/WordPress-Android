@@ -19,11 +19,6 @@ import dagger.hilt.android.testing.HiltAndroidTest;
 
 @HiltAndroidTest
 public class LoginTests extends BaseTest {
-    @Before
-    public void setUp() {
-        logoutIfNecessary();
-    }
-
     @Ignore("Ignored temporarily. This sometimes fail on CI while running with whole test suite.")
     @Test
     public void e2eLoginWithEmailPassword() {

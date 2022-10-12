@@ -29,6 +29,7 @@ import org.wordpress.android.e2e.pages.MySitesPage;
 import org.wordpress.android.mocks.AndroidNotifier;
 import org.wordpress.android.mocks.AssetFileSource;
 import org.wordpress.android.ui.WPLaunchActivity;
+import org.wordpress.android.ui.accounts.LoginActivity;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -58,8 +59,8 @@ public class BaseTest {
     public InitializationRule mInitializationRule = new InitializationRule();
 
     @Rule(order = 2)
-    public ActivityScenarioRule<WPLaunchActivity> mActivityScenarioRule
-            = new ActivityScenarioRule<>(WPLaunchActivity.class);
+    public ActivityScenarioRule<LoginActivity> mActivityScenarioRule
+            = new ActivityScenarioRule<>(LoginActivity.class);
 
     @Rule(order = 3)
     public WireMockRule wireMockRule;

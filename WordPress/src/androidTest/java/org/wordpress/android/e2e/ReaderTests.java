@@ -20,7 +20,6 @@ public class ReaderTests extends BaseTest {
 
     @Before
     public void setUp() {
-        logoutIfNecessary();
         wpLogin();
         new ReaderPage().go();
     }

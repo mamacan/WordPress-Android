@@ -24,7 +24,6 @@ import dagger.hilt.android.testing.HiltAndroidTest;
 public class StatsTests extends BaseTest {
     @Before
     public void setUp() {
-        logoutIfNecessary();
         wpLogin();
     }
 

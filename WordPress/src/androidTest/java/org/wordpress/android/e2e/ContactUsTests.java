@@ -13,11 +13,6 @@ import dagger.hilt.android.testing.HiltAndroidTest;
 
 @HiltAndroidTest
 public class ContactUsTests extends BaseTest {
-    @Before
-    public void setUp() {
-        logoutIfNecessary();
-    }
-
     @Ignore("Ignored temporarily. This sometimes fail on CI while running with whole test suite.")
     @Test
     public void e2eSendButtonEnabledWhenTextIsEntered() {

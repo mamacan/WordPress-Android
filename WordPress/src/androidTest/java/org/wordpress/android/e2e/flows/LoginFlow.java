@@ -14,6 +14,7 @@ import org.wordpress.android.e2e.pages.HelpAndSupportScreen;
 
 import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
 import static androidx.test.espresso.matcher.ViewMatchers.isDescendantOfA;
@@ -59,10 +60,14 @@ public class LoginFlow {
 
         // New Epilogue Screen - Choose the first site from the list of site.
         // See LoginEpilogueFragment
-        ViewInteraction sitesList = onView(withId(R.id.recycler_view));
-        waitForElementToBeDisplayed(sitesList);
-        sitesList.perform(actionOnItemAtPosition(1, click()));
+        //ViewInteraction sitesList = onView(withId(R.id.recycler_view));
+        //waitForElementToBeDisplayed(sitesList);
+        //sitesList.perform(actionOnItemAtPosition(1, click()));
 
+        waitForElementToBeDisplayed(R.id.login_epilogue_header_title);
+        pressBack();
+
+/*
         if (!isSelfHosted) {
             // Quick Start Prompt Dialog - Click the "No thanks" negative button to continue.
             // See QuickStartPromptDialogFragment
@@ -70,7 +75,7 @@ public class LoginFlow {
             waitForElementToBeDisplayed(negativeButton);
             clickOn(negativeButton);
         }
-
+*/
         if (BuildConfig.IS_JETPACK_APP) {
             dismissNewFeaturesDialogIfDisplayed();
         }
