@@ -2,7 +2,7 @@
 common_params:
   # Common plugin settings to use with the `plugins` key.
   - &common_plugins
-    - automattic/bash-cache#2.1.0
+    - automattic/bash-cache#add/automated-repo-caching
 
 steps:
   #################
@@ -28,11 +28,13 @@ steps:
 
       - label: "🕵️ Lint WordPress"
         command: ".buildkite/commands/lint.sh wordpress"
+        plugins: *common_plugins
         artifact_paths:
           - "**/build/reports/lint-results*.*"
 
       - label: "🕵️ Lint Jetpack"
         command: ".buildkite/commands/lint.sh jetpack"
+        plugins: *common_plugins
         artifact_paths:
           - "**/build/reports/lint-results*.*"
 
