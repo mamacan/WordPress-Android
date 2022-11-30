@@ -4,6 +4,7 @@ import android.content.res.Configuration
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -84,13 +85,16 @@ fun WelcomeStep(uiState: UiState.Content.Welcome) = with(uiState) {
                             text = uiStringText(secondaryActionButton.text),
                             onClick = secondaryActionButton.onClick,
                             enabled = !isProcessing,
-                            modifier = Modifier.dimmed(isProcessing),
+                            modifier = Modifier
+                                    .padding(bottom = 50.dp)
+                                    .dimmed(isProcessing),
                     )
                 }
         )
 
         UserAvatarImage(
                 avatarUrl = uiState.userAvatarUrl,
+                onClick = secondaryActionButton.onClick,
                 modifier = Modifier.dimmed(isProcessing),
         )
 
